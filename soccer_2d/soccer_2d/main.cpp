@@ -6,7 +6,7 @@
 
 using namespace std;
 
-enum EtatProg {etat_menu, etat_jeu};
+
 
 int main(int argc, char ** argv) {
 	// debut du programme
@@ -29,16 +29,18 @@ int main(int argc, char ** argv) {
 
 		// mise a jour
 		if (etat_programme == etat_menu) {
+			menu.update(etat_programme);
 		}
 
 		// dessin
 		window.clear();
-		window.draw(shape);
-
 		if (etat_programme == etat_menu) {
 			menu.draw(&window);
 		}
 
+		if (etat_programme == etat_jeu) {
+			window.draw(shape);
+		}
 		window.display();
 	}
 	cout << "program *************************** fin  " << endl;

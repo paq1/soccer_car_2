@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
+enum EtatProg { etat_menu, etat_jeu };
+
 class Menu {
 private:
 	sf::Texture texture;
@@ -11,6 +13,7 @@ public:
 	Menu();
 	~Menu();
 
+	void update(EtatProg&);
 	void draw(sf::RenderWindow*);
 };
 
