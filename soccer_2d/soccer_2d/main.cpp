@@ -7,7 +7,7 @@ using namespace std;
 int main(int argc, char ** argv) {
 	// debut du programme
 	cout << "program *************************** debut" << endl;
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(1024, 600), "soccer 2d -- EvaM2101 -- paq1 --");
 	sf::CircleShape shape(100.f);
 	shape.setFillColor(sf::Color::Green);
 
