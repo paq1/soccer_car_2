@@ -3,16 +3,16 @@
 #include <SFML/Graphics.hpp>
 
 #include "menu.hpp"
+#include "stade.hpp"
 
 using namespace std;
-
-
 
 int main(int argc, char ** argv) {
 	// debut du programme
 	cout << "program *************************** debut" << endl;
 	EtatProg etat_programme = etat_menu;
 	Menu menu = Menu();
+	Stade stade1 = Stade();
 
 	sf::RenderWindow window(sf::VideoMode(1024, 600), "soccer 2d -- EvaM2101 -- paq1 --");
 	sf::CircleShape shape(100.f);
@@ -39,7 +39,8 @@ int main(int argc, char ** argv) {
 		}
 
 		if (etat_programme == etat_jeu) {
-			window.draw(shape);
+			//window.draw(shape);
+			stade1.draw(&window);
 		}
 		window.display();
 	}
