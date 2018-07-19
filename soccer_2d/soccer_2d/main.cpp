@@ -5,6 +5,7 @@
 #include "menu.hpp"
 #include "stade.hpp"
 #include "car.hpp"
+#include "balle.hpp"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ int main(int argc, char ** argv) {
 	Menu menu = Menu();
 	Stade stade1 = Stade();
 	Car voiture1 = Car();
+	Balle balle = Balle();
 
 	sf::RenderWindow window(sf::VideoMode(1024, 600), "soccer 2d -- EvaM2101 -- paq1 --");
 	sf::CircleShape shape(100.f);
@@ -35,6 +37,8 @@ int main(int argc, char ** argv) {
 		}
 		if (etat_programme == etat_jeu) {
 			voiture1.update();
+			balle.update();
+
 		}
 
 		// dessin
@@ -47,6 +51,7 @@ int main(int argc, char ** argv) {
 			//window.draw(shape);
 			stade1.draw(&window);
 			voiture1.draw(&window);
+			balle.draw(&window);
 		}
 		window.display();
 	}

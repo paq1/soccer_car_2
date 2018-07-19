@@ -7,6 +7,11 @@ Balle::Balle() {
 	this->angle = 0;
 	this->rayon = 32;
 	this->shape = sf::CircleShape(this->rayon);
+	this->shape.setPosition(this->position);
+	this->shape.setOrigin(
+		this->rayon / 2,
+		this->rayon / 2
+	);
 	this->R = 255;
 	this->V = 255;
 	this->B = 255;
