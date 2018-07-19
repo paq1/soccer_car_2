@@ -134,11 +134,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="car.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="stade.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="car.hpp" />
     <ClInclude Include="menu.hpp" />
     <ClInclude Include="stade.hpp" />
   </ItemGroup>
