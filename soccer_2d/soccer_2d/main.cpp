@@ -22,8 +22,16 @@ int main(int argc, char ** argv) {
 	sf::CircleShape shape(100.f);
 	shape.setFillColor(sf::Color::Green);
 
+	// init variable temps
+	sf::Clock clock;
+	sf::Time temps_precedent;
+	sf::Time temps_actuel;
+
 	while (window.isOpen())
 	{
+		// gestion du temps
+		temps_actuel = clock.getElapsedTime();
+
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -32,14 +40,18 @@ int main(int argc, char ** argv) {
 		}
 
 		// mise a jour
-		if (etat_programme == etat_menu) {
-			menu.update(etat_programme);
-		}
-		if (etat_programme == etat_jeu) {
-			voiture1.update();
-			balle.update();
+		if (temps_actuel.asMilliseconds() - temps_precedent.asMilliseconds() > 30) {
+			if (etat_programme == etat_menu) {
+				menu.update(etat_programme);
+			}
+			if (etat_programme == etat_jeu) {
+				voiture1.update();
+				balle.update();
 
+			}
+			temps_precedent = temps_actuel;
 		}
+		
 
 		// dessin
 		window.clear();
