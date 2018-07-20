@@ -35,6 +35,25 @@ void Car::deplacement() {
 	}
 	this->sprite.setRotation(this->angle);
 
+	// deplacement de base (pour les tests des collisions)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
+		if (this->position.x > 0 && this->position.x < 1024 && this->position.y > 0 &&
+			this->position.y < 600) {
+			this->position.x += (10 * cos(degre_to_radian(this->angle - 90))) / 10.f;
+			this->position.y += (10 * sin(degre_to_radian(this->angle - 90))) / 10.f;
+		}
+	}
+
+
+	if (!(this->position.x > 0 && this->position.x < 1024 && this->position.y > 0 &&
+		this->position.y < 600)) {
+		this->position = ancienne_position;
+	}
+
+	// Amelioration du deplacement du vehicule
+	
+	/*
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
 		//if(abs(this->velocity.x) < 0.5)
 			this->velocity.x += (10 * cos(degre_to_radian(this->angle - 90))) / 10000.f;
@@ -58,6 +77,8 @@ void Car::deplacement() {
 
 		// this->velocity = sf::Vector2f(0, 0);
 	}
+
+	*/
 	
 	this->sprite.setPosition(this->position);
 }
