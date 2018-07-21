@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClCompile Include="balle.cpp" />
     <ClCompile Include="car.cpp" />
+    <ClCompile Include="car_corners.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="stade.cpp" />
@@ -143,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="balle.hpp" />
     <ClInclude Include="car.hpp" />
+    <ClInclude Include="car_corners.hpp" />
     <ClInclude Include="menu.hpp" />
     <ClInclude Include="stade.hpp" />
   </ItemGroup>

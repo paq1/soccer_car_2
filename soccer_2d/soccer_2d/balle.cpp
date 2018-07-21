@@ -20,7 +20,6 @@ Balle::Balle() {
 	);
 	this->d = 10;
 }
-
 Balle::~Balle() {
 	// rien a supprimer
 }
@@ -38,6 +37,8 @@ void Balle::set_pos(sf::Vector2f p_pos) {
 void Balle::set_angle(double p_angle) {
 	this->angle = p_angle;
 }
+
+
 
 void Balle::update() {
 

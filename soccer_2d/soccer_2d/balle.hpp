@@ -28,6 +28,9 @@ public:
 
 	void update();
 	void draw(sf::RenderWindow*);
+
+	// Methods
+	
 };
 
 #endif // !_BALLE_
