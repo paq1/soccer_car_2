@@ -43,7 +43,13 @@ void Car::deplacement() {
 			this->position.y += (10 * sin(degre_to_radian(this->angle - 90)));
 		}
 	}
-
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		if (this->position.x > 0 && this->position.x < 1024 && this->position.y > 0 &&
+			this->position.y < 600) {
+			this->position.x -= (10 * cos(degre_to_radian(this->angle - 90)));
+			this->position.y -= (10 * sin(degre_to_radian(this->angle - 90)));
+		}
+	}
 
 	if (!(this->position.x > 0 && this->position.x < 1024 && this->position.y > 0 &&
 		this->position.y < 600)) {
