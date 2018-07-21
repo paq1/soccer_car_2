@@ -15,6 +15,9 @@ public:
 	Car();
 	~Car();
 
+	sf::Vector2f get_position() const;
+	double get_angle() const;
+
 	void update();
 	void draw(sf::RenderWindow*);
 

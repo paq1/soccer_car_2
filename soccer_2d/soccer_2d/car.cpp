@@ -15,6 +15,13 @@ Car::~Car() {
 
 }
 
+sf::Vector2f Car::get_position() const {
+	return this->position;
+}
+double Car::get_angle() const {
+	return this->angle;
+}
+
 void Car::update() {
 	this->deplacement();
 }

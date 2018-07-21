@@ -6,6 +6,7 @@
 #include "stade.hpp"
 #include "car.hpp"
 #include "balle.hpp"
+#include "car_corners.hpp"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ int main(int argc, char ** argv) {
 	Stade stade1 = Stade();
 	Car voiture1 = Car();
 	Balle balle = Balle();
+	Corners corners = Corners();
 
 	sf::RenderWindow window(sf::VideoMode(1024, 600), "soccer 2d -- EvaM2101 -- paq1 --");
 	sf::CircleShape shape(100.f);
@@ -48,6 +50,10 @@ int main(int argc, char ** argv) {
 				voiture1.update();
 				balle.update();
 				stade1.update(&window);
+				corners.update(
+					voiture1.get_position(),
+					voiture1.get_angle()
+				);
 			}
 			temps_precedent = temps_actuel;
 		}

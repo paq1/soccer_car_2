@@ -2,7 +2,7 @@
 
 Corners::Corners() {
 	for (int i = 0; i < 4; i++) {
-		for (int j = 0; i < 2; j++) {
+		for (int j = 0; j < 2; j++) {
 			this->corners[i][j] = 0;
 		}
 	}
@@ -69,10 +69,30 @@ sf::Vector2f Corners::give_corner(
 	else if (i == 2) {
 		theta = theta + PI - ALPHA;
 	}
-	return pos_car;
+	else if (i == 3) {
+		theta = theta + PI + ALPHA;
+	}
+	else {
+		theta = theta - ALPHA;
+	}
+	float X = pos_car.x + D * cos(theta);
+	float Y = pos_car.y - D * sin(theta);
+	sf::Vector2f pos_corner = sf::Vector2f(X, Y);
+	return pos_corner;
 }
 
 void Corners::update(sf::Vector2f pos_car, 
 	double angle_car) {
-
+	for (int i = 0; i < 4; i++) {
+		sf::Vector2f pos_corner_i
+			= give_corner(pos_car, angle_car, i + 1);
+		this->corners[i][0] = pos_corner_i.x;
+		this->corners[i][1] = pos_corner_i.y;
+		//TEST
+		std::cout << this->corners[i][0];
+		std::cout << ", ";
+		std::cout << this->corners[i][1] << std::endl;
+	}
+	std::cout << "\n";
 }
+	
