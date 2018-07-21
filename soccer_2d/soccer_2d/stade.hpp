@@ -2,6 +2,7 @@
 #define _STADE_
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 class Stade {
 private:
@@ -16,11 +17,14 @@ private:
 
 	sf::Vector2f pos_imiko;
 	bool gauche, droite;
+
+	sf::Font police;
+	sf::Text texte_pos_souris;
 public:
 	Stade();
 	~Stade();
 
-	void update();
+	void update(sf::RenderWindow*);
 	void draw(sf::RenderWindow*);
 };
 

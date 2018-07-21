@@ -6,7 +6,7 @@ Car::Car() {
 	this->position = sf::Vector2f(100, 280);
 	this->velocity = sf::Vector2f(0, 0);
 	this->sprite.setPosition(this->position);
-	this->angle = 90.f;
+	this->angle = 0.f;
 	this->sprite.setRotation(this->angle);
 	this->sprite.setOrigin(16, 32);
 }
@@ -39,15 +39,15 @@ void Car::deplacement() {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) {
 		if (this->position.x > 0 && this->position.x < 1024 && this->position.y > 0 &&
 			this->position.y < 600) {
-			this->position.x += (10 * cos(degre_to_radian(this->angle - 90)));
-			this->position.y += (10 * sin(degre_to_radian(this->angle - 90)));
+			this->position.x += (10 * cos(degre_to_radian(this->angle)));
+			this->position.y += (10 * sin(degre_to_radian(this->angle)));
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 		if (this->position.x > 0 && this->position.x < 1024 && this->position.y > 0 &&
 			this->position.y < 600) {
-			this->position.x -= (10 * cos(degre_to_radian(this->angle - 90)));
-			this->position.y -= (10 * sin(degre_to_radian(this->angle - 90)));
+			this->position.x -= (10 * cos(degre_to_radian(this->angle)));
+			this->position.y -= (10 * sin(degre_to_radian(this->angle)));
 		}
 	}
 
