@@ -67,21 +67,21 @@ sf::Vector2f Corners::give_corner(
 	// et la premiere diagonale
 	const double D = sqrt(pow(L / 2, 2) + pow(l / 2, 2));
 	// longueur de la demi diagonale
-	double theta = angle_car;
+	double theta = angle_car * PI / 180.;
 	if (i == 1) {
-		theta = theta + ALPHA;
-	}
-	else if (i == 2) {
 		theta = theta - ALPHA;
 	}
-	else if (i == 3) {
-		theta = theta + PI + ALPHA;
+	else if (i == 2) {
+		theta = theta + ALPHA;
 	}
-	else if (i == 4) {
+	else if (i == 3) {
 		theta = theta + PI - ALPHA;
 	}
+	else if (i == 4) {
+		theta = theta + PI + ALPHA;
+	}
 	float X = pos_car.x + D * cos(theta);
-	float Y = pos_car.y - D * sin(theta);
+	float Y = pos_car.y + D * sin(theta);
 	sf::Vector2f pos_corner = sf::Vector2f(X, Y);
 	return pos_corner;
 }
