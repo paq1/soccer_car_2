@@ -94,11 +94,11 @@ void Corners::update(sf::Vector2f pos_car,
 		this->corners[i][0] = pos_corner_i.x;
 		this->corners[i][1] = pos_corner_i.y;
 		//TEST
-		std::cout << this->corners[i][0];
-		std::cout << ", ";
-		std::cout << this->corners[i][1] << std::endl;
+		//std::cout << this->corners[i][0];
+		//std::cout << ", ";
+		//std::cout << this->corners[i][1] << std::endl;
 	}
-	std::cout << "\n";
+	//std::cout << "\n";
 	//std::cout << ALPHA << std::endl;
 }
 	
