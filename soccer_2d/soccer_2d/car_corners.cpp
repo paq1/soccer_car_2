@@ -62,18 +62,23 @@ sf::Vector2f Corners::give_corner(
 	double angle_car,
 	int i
 ) {
+	const double ALPHA = atan(l / L);
+	// angle  entre la direction de la voiture
+	// et la premiere diagonale
+	const double D = sqrt(pow(L / 2, 2) + pow(l / 2, 2));
+	// longueur de la demi diagonale
 	double theta = angle_car;
 	if (i == 1) {
 		theta = theta + ALPHA;
 	}
 	else if (i == 2) {
-		theta = theta + PI - ALPHA;
+		theta = theta - ALPHA;
 	}
 	else if (i == 3) {
 		theta = theta + PI + ALPHA;
 	}
-	else {
-		theta = theta - ALPHA;
+	else if (i == 4) {
+		theta = theta + PI - ALPHA;
 	}
 	float X = pos_car.x + D * cos(theta);
 	float Y = pos_car.y - D * sin(theta);
@@ -94,5 +99,6 @@ void Corners::update(sf::Vector2f pos_car,
 		std::cout << this->corners[i][1] << std::endl;
 	}
 	std::cout << "\n";
+	//std::cout << ALPHA << std::endl;
 }
 	

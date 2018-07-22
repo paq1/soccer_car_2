@@ -8,7 +8,7 @@ Car::Car() {
 	this->sprite.setPosition(this->position);
 	this->angle = 0.f;
 	this->sprite.setRotation(this->angle);
-	this->sprite.setOrigin(16, 32);
+	this->sprite.setOrigin(32, 16);
 }
 
 Car::~Car() {

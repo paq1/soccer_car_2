@@ -4,18 +4,14 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-#define PI 3,141592
-#define L 64 //largeur de la voiture
-#define l 32 //hauteur de la voiture
-#define D sqrt(pow(L/2, 2) + pow(l/2, 2)) 
-// longueur de la demi diagonale
-#define ALPHA atan(l/L) 
-// angle  entre la direction de la voiture
-// et la premiere diagonale
+#define PI 3.141592
+#define L 64. //largeur de la voiture
+#define l 32. //hauteur de la voiture
 
 class Corners {
 private:
 	double corners[4][2];
+	
 public:
 	Corners();
 	~Corners();
