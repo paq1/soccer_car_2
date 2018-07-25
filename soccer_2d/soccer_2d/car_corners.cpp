@@ -11,28 +11,16 @@ Corners::~Corners() {
 	// rien a supprimer
 }
 
-#pragma region GETTERS
-// donne le coin avant gauche
-sf::Vector2f Corners::get_corner1() {
-	return sf::Vector2f(this->corners[0][0],
-		this->corners[0][1]);
+// donne : 
+// 1 = coin avant gauche
+// 2 = coin avant droit
+// 3 = coin arrière droit
+// 4 = coin avant gauche
+sf::Vector2f Corners::get_corneri(int i) {
+	i = i - 1;
+	return sf::Vector2f(this->corners[i][0],
+		this->corners[i][1]);
 }
-// donne le coin avant droit
-sf::Vector2f Corners::get_corner2() {
-	return sf::Vector2f(this->corners[1][0],
-		this->corners[1][1]);
-}
-// donne le coin arrière droit
-sf::Vector2f Corners::get_corner3() {
-	return sf::Vector2f(this->corners[2][0],
-		this->corners[2][1]);
-}
-// donne le coin avant gauche
-sf::Vector2f Corners::get_corner4() {
-	return sf::Vector2f(this->corners[3][0],
-		this->corners[3][1]);
-}
-#pragma endregion
 
 #pragma region SETTERS
 // modifie le coin avant gauche
@@ -82,6 +70,7 @@ sf::Vector2f Corners::give_corner(
 	}
 	float X = pos_car.x + D * cos(theta);
 	float Y = pos_car.y + D * sin(theta);
+	//std::cout << i << " : " << X << ", " << Y << std::endl;
 	sf::Vector2f pos_corner = sf::Vector2f(X, Y);
 	return pos_corner;
 }

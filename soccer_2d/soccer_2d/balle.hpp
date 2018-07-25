@@ -2,6 +2,7 @@
 #define _BALLE_
 
 #include <SFML/Graphics.hpp>
+#include "car_corners.hpp"
 
 #define HAUTEUR_FENETRE 600
 #define LARGEUR_FENETRE 1024
@@ -26,11 +27,14 @@ public:
 	void set_pos(sf::Vector2f);
 	void set_angle(double);
 
-	void update();
+	void update(Corners);
 	void draw(sf::RenderWindow*);
 
 	// Methods
-	
+	sf::Vector2f car_side_vector(Corners, int);
+	sf::Vector2f car_ball_vector(Corners, int);
+	float determinant(sf::Vector2f, sf::Vector2f);
+	bool car_collide(Corners);
 };
 
 #endif // !_BALLE_

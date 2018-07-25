@@ -16,10 +16,7 @@ public:
 	Corners();
 	~Corners();
 
-	sf::Vector2f get_corner1();
-	sf::Vector2f get_corner2();
-	sf::Vector2f get_corner3();
-	sf::Vector2f get_corner4();
+	sf::Vector2f get_corneri(int);
 
 	void set_corner1(sf::Vector2f);
 	void set_corner2(sf::Vector2f);

@@ -48,12 +48,12 @@ int main(int argc, char ** argv) {
 			}
 			if (etat_programme == etat_jeu) {
 				voiture1.update();
-				balle.update();
 				stade1.update(&window);
 				corners.update(
 					voiture1.get_position(),
 					voiture1.get_angle()
 				);
+				balle.update(corners);
 			}
 			temps_precedent = temps_actuel;
 		}
