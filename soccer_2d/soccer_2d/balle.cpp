@@ -1,6 +1,9 @@
 #include "balle.hpp"
 
 Balle::Balle() {
+
+	
+
 	this->position = sf::Vector2f(
 		LARGEUR_FENETRE / 2,
 		HAUTEUR_FENETRE / 2);
@@ -94,6 +97,15 @@ bool Balle::car_collide(Corners p_corners) {
 }
 
 void Balle::update(Corners p_corners, double car_angle) {
+	// reinitialise la baballe
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+		this->position = sf::Vector2f(
+			LARGEUR_FENETRE / 2,
+			HAUTEUR_FENETRE / 2
+		);
+		this->shape.setPosition(this->position);
+	}
+	
 	if (car_collide(p_corners)) {
 		std::cout << "COLLISION \n" << std::endl;
 		this->position.x = this->position.x 
