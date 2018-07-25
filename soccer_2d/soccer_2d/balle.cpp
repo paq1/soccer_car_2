@@ -93,9 +93,14 @@ bool Balle::car_collide(Corners p_corners) {
 	return a_droite;
 }
 
-void Balle::update(Corners p_corners) {
+void Balle::update(Corners p_corners, double car_angle) {
 	if (car_collide(p_corners)) {
 		std::cout << "COLLISION \n" << std::endl;
+		this->position.x = this->position.x 
+			+ 10 * cos(car_angle * PI / 180);
+		this->position.y = this->position.y 
+			+ 10 * sin(car_angle * PI / 180);
+		this->shape.setPosition(this->position);
 	}
 }
 

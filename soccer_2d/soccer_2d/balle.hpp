@@ -27,7 +27,7 @@ public:
 	void set_pos(sf::Vector2f);
 	void set_angle(double);
 
-	void update(Corners);
+	void update(Corners, double);
 	void draw(sf::RenderWindow*);
 
 	// Methods
