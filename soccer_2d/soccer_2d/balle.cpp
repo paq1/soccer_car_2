@@ -9,8 +9,8 @@ Balle::Balle() {
 	this->shape = sf::CircleShape(this->rayon);
 	this->shape.setPosition(this->position);
 	this->shape.setOrigin(
-		this->rayon / 2,
-		this->rayon / 2
+		this->rayon,
+		this->rayon
 	);
 	this->R = 255;
 	this->V = 255;
