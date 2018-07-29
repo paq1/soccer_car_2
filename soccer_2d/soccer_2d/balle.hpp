@@ -27,7 +27,7 @@ public:
 	void set_pos(sf::Vector2f);
 	void set_angle(double);
 
-	void update(Corners, double);
+	void update(Corners, double, sf::Vector2f);
 	void draw(sf::RenderWindow*);
 
 	// Methods
@@ -35,6 +35,8 @@ public:
 	sf::Vector2f car_ball_vector(Corners, int);
 	float determinant(sf::Vector2f, sf::Vector2f);
 	bool car_collide(Corners);
+	sf::Vector2i collided_side(sf::Vector2f);
+	void react_car_ball(sf::Vector2i);
 };
 
 #endif // !_BALLE_

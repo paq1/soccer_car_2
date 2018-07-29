@@ -53,7 +53,9 @@ int main(int argc, char ** argv) {
 					voiture1.get_position(),
 					voiture1.get_angle()
 				);
-				balle.update(corners, voiture1.get_angle());
+				balle.update(corners, 
+					voiture1.get_angle(), 
+					voiture1.get_position());
 			}
 			temps_precedent = temps_actuel;
 		}
